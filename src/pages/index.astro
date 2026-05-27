@@ -1,12 +1,15 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostCard from '@/components/PostCard.astro';
-import { getFeaturedPosts, getPublishedPosts } from '@/lib/posts';
+import { getAllTags, getFeaturedPosts, getPublishedPosts, slugify } from '@/lib/posts';
 import profilePicture from '@/content/assets/profilepicture.JPG';
 
 const featuredPosts = await getFeaturedPosts();
 const latestPosts = (await getPublishedPosts()).slice(0, 4);
 const heroPosts = featuredPosts.length > 0 ? featuredPosts : latestPosts.slice(0, 3);
+const topTags = (await getAllTags())
+  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
+  .slice(0, 6);
 ---
 
 <BaseLayout>
@@ -54,6 +57,23 @@ const heroPosts = featuredPosts.length > 0 ? featuredPosts : latestPosts.slice(0
       {heroPosts.map((post) => <PostCard post={post} featured />)}
     </div>
   </section>
+
+  {topTags.length > 0 && (
+    <section class="tag-strip" aria-labelledby="tag-strip-heading">
+      <div>
+        <p class="kicker">Top Tags</p>
+        <h2 id="tag-strip-heading">Tiny portals</h2>
+      </div>
+      <div class="tag-strip__links">
+        {topTags.map((tag) => (
+          <a href={`/tags/${slugify(tag.name)}/`}>
+            <span>#{tag.name}</span>
+            <small>{tag.count}</small>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
 
   <section class="section section--split yap-section">
     <div class="section-heading section-heading--yap">

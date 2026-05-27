@@ -706,6 +706,83 @@ main > section,
   gap: 22px;
 }
 
+.tag-strip {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  border: 3px solid var(--purple);
+  border-radius: 14px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  padding: 14px 16px;
+  background:
+    radial-gradient(circle at 92% 24%, rgba(255, 29, 104, 0.22) 0 12px, transparent 13px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 45%),
+    #fff9a8;
+  box-shadow: var(--small-shadow);
+}
+
+.tag-strip h2 {
+  margin: 2px 0 0;
+  color: var(--purple);
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  line-height: 1;
+  text-shadow: 2px 2px 0 #fff;
+}
+
+.tag-strip__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.tag-strip__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 2px solid var(--purple);
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--purple);
+  background:
+    linear-gradient(180deg, #fff 0%, #ffe6fb 100%);
+  font-weight: 900;
+  box-shadow: 3px 3px 0 rgba(255, 29, 104, 0.38);
+  transition:
+    background-color 140ms ease,
+    box-shadow 140ms ease,
+    color 140ms ease,
+    transform 140ms ease;
+}
+
+.tag-strip__links a::before {
+  content: "✦";
+  color: var(--pink);
+  font-family: var(--display);
+  font-size: 0.75rem;
+}
+
+.tag-strip__links a:hover {
+  color: #fff;
+  background: var(--pink);
+  box-shadow: 4px 4px 0 var(--yellow);
+  transform: translate(-1px, -1px);
+}
+
+.tag-strip__links small {
+  display: grid;
+  min-width: 1.45em;
+  min-height: 1.45em;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--purple);
+  background: var(--yellow);
+  font-size: 0.72rem;
+}
+
 .post-list {
   display: grid;
   gap: 20px;
@@ -987,6 +1064,21 @@ main > section,
 
 .contact-panel .retro-window {
   transform: rotate(-1deg);
+}
+
+.contact-window {
+  background: #fff9a8;
+}
+
+.contact-window .signal-panel {
+  background:
+    radial-gradient(circle at 88% 22%, var(--pink) 0 12px, transparent 13px),
+    radial-gradient(circle at 80% 34%, var(--lilac) 0 18px, transparent 19px),
+    #fff9a8;
+}
+
+.contact-window .signal-panel strong {
+  color: #f76218;
 }
 
 .contact-card {
@@ -1329,6 +1421,7 @@ main > section,
 
   .hero,
   .section--split,
+  .tag-strip,
   .post-grid,
   .contact-panel {
     grid-template-columns: 1fr;
@@ -1348,6 +1441,21 @@ main > section,
 
   .featured-grid {
     grid-template-columns: 1fr;
+  }
+
+  .tag-strip {
+    margin-top: -8px;
+    padding: 12px;
+  }
+
+  .tag-strip__links {
+    justify-content: flex-start;
+    gap: 7px;
+  }
+
+  .tag-strip__links a {
+    padding: 4px 8px;
+    font-size: 0.86rem;
   }
 
   .toc {
