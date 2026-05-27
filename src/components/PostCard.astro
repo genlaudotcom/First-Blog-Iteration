@@ -1,12 +1,18 @@
 ---
-import { formatDate, slugFromId, slugify } from '@/lib/posts';
+import { formatDate, resolveImagePath, slugFromId, slugify } from '@/lib/posts';
 
 const { post, featured = false } = Astro.props;
 const slug = slugFromId(post.id);
+const image = resolveImagePath(post.data.heroImage ?? post.data.image);
 ---
 
 <article class:list={['post-card', { featured }]}>
-  <a class="post-card__media" href={`/blog/${slug}/`} aria-label={`Read ${post.data.title}`}>
+  <a
+    class="post-card__media"
+    href={`/blog/${slug}/`}
+    aria-label={`Read ${post.data.title}`}
+    style={`--post-image: url('${image}')`}
+  >
     <span>{post.data.category}</span>
     <small>Read</small>
   </a>

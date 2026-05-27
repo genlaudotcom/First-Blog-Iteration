@@ -278,7 +278,7 @@ main > section,
   color: #fff;
   background:
     linear-gradient(145deg, rgba(16, 18, 23, 0.9), rgba(255, 77, 61, 0.72)),
-    url('/social-card.svg') center / cover;
+    var(--post-image, url('/social-card.svg')) center / cover;
   font-weight: 800;
 }
 
@@ -376,6 +376,22 @@ main > section,
 .post-hero {
   max-width: 900px;
   padding: 74px 0 42px;
+}
+
+.post-hero__image {
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  margin: 34px 0 0;
+  background: var(--surface);
+  box-shadow: 8px 8px 0 rgba(16, 18, 23, 0.08);
+}
+
+.post-hero__image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .post-grid {

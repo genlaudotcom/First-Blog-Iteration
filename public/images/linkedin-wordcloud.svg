@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#f8f7f2"/>
+  <path d="M74 72h1452v756H74z" fill="#101217"/>
+  <path d="M112 110h1376v92H112z" fill="#f8f7f2"/>
+  <circle cx="160" cy="156" r="16" fill="#ff4d3d"/>
+  <circle cx="210" cy="156" r="16" fill="#10b981"/>
+  <circle cx="260" cy="156" r="16" fill="#facc15"/>
+  <text x="1320" y="166" fill="#5f6772" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">r/LinkedInLunatics</text>
+  <rect x="112" y="238" width="1376" height="552" fill="#f8f7f2"/>
+  <text x="250" y="415" fill="#0a66c2" font-family="Inter, Arial, sans-serif" font-size="128" font-weight="900">authenticity</text>
+  <text x="470" y="555" fill="#101217" font-family="Inter, Arial, sans-serif" font-size="104" font-weight="900">disruption</text>
+  <text x="190" y="640" fill="#ff4d3d" font-family="Inter, Arial, sans-serif" font-size="84" font-weight="900">humbled</text>
+  <text x="810" y="670" fill="#10b981" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="900">grateful</text>
+  <text x="910" y="322" fill="#facc15" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="900">founder mode</text>
+  <text x="214" y="287" fill="#5f6772" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="800">journey</text>
+  <text x="1140" y="475" fill="#5f6772" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800">synergy</text>
+  <text x="350" y="735" fill="#5f6772" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800">lessons</text>
+  <text x="1024" y="745" fill="#5f6772" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">mindset</text>
+  <text x="684" y="724" fill="#0a66c2" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">building</text>
+  <text x="150" y="520" fill="#5f6772" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" transform="rotate(-90 150 520)">leadership</text>
+  <text x="1346" y="640" fill="#5f6772" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" transform="rotate(-90 1346 640)">vulnerability</text>
+  <path d="M206 458h258v14H206z" fill="#facc15"/>
+  <path d="M1110 520h214v14h-214z" fill="#ff4d3d"/>
+  <path d="M595 604h142v14H595z" fill="#10b981"/>
+</svg>

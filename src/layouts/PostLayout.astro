@@ -1,17 +1,18 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { formatDate, slugify } from '@/lib/posts';
+import { formatDate, resolveImagePath, slugify } from '@/lib/posts';
 
 const { post, headings = [] } = Astro.props;
 const postUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://genlau.com').toString();
 const shareText = encodeURIComponent(`${post.data.title} by Gen Lau`);
 const shareUrl = encodeURIComponent(postUrl);
+const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
 ---
 
 <BaseLayout
   title={post.data.title}
   description={post.data.description}
-  image={post.data.image ?? '/social-card.svg'}
+  image={heroImage}
   type="article"
 >
   <article class="post-shell">
@@ -30,6 +31,11 @@ const shareUrl = encodeURIComponent(postUrl);
         <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}>LinkedIn</a>
         <a href={`mailto:?subject=${shareText}&body=${shareUrl}`}>Email</a>
       </div>
+      {heroImage !== '/social-card.svg' && (
+        <figure class="post-hero__image">
+          <img src={heroImage} alt="" loading="eager" decoding="async" />
+        </figure>
+      )}
     </header>
     <div class="post-grid">
       <aside class="toc" aria-label="Table of contents">

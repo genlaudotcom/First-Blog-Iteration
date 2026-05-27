@@ -13,6 +13,15 @@ export function slugify(value: string) {
     .replace(/^-+|-+$/g, '');
 }
 
+export function resolveImagePath(image?: string) {
+  if (!image) return '/social-card.svg';
+  if (image.startsWith('/') || image.startsWith('http://') || image.startsWith('https://')) {
+    return image;
+  }
+
+  return `/images/${image}`;
+}
+
 export function formatDate(date: Date) {
   return new Intl.DateTimeFormat('en', {
     month: 'short',
