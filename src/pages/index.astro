@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostCard from '@/components/PostCard.astro';
 import { getFeaturedPosts, getPublishedPosts } from '@/lib/posts';
+import profilePicture from '@/content/assets/profilepicture.JPG';
 
 const featuredPosts = await getFeaturedPosts();
 const latestPosts = (await getPublishedPosts()).slice(0, 4);
@@ -25,7 +26,12 @@ const heroPosts = featuredPosts.length > 0 ? featuredPosts : latestPosts.slice(0
       </div>
     </div>
     <div class="hero__visual">
-      <div class="retro-window" aria-hidden="true">
+      <div class="profile-stack">
+        <figure class="profile-sticker">
+          <img src={profilePicture.src} alt="Portrait of Gen Lau" width="839" height="839" />
+          <figcaption>NEW PIC!</figcaption>
+        </figure>
+        <div class="retro-window">
         <div class="retro-window__bar">
           <span>status_window.gif</span>
           <span>OK</span>
@@ -33,6 +39,7 @@ const heroPosts = featuredPosts.length > 0 ? featuredPosts : latestPosts.slice(0
         <div class="signal-panel life-update">
           <span>life updates!</span>
           <strong>Also I'm unemployed and looking for a job</strong>
+        </div>
         </div>
       </div>
     </div>

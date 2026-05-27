@@ -344,6 +344,66 @@ main > section,
   place-items: center;
 }
 
+.profile-stack {
+  position: relative;
+  display: grid;
+  width: min(100%, 520px);
+  min-height: 520px;
+  place-items: center;
+}
+
+.profile-stack::before {
+  position: absolute;
+  z-index: 2;
+  color: var(--pink);
+  font-family: var(--display);
+  pointer-events: none;
+  text-shadow: 3px 3px 0 var(--yellow);
+}
+
+.profile-stack::before {
+  content: "*";
+  top: 34px;
+  right: 34px;
+  font-size: 4rem;
+  transform: rotate(12deg);
+}
+
+.profile-sticker {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 50%;
+  width: min(58%, 285px);
+  margin: 0;
+  transform: translateX(-52%) rotate(-5deg);
+}
+
+.profile-sticker img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 4px solid var(--purple);
+  border-radius: 22px;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 10px 10px 0 var(--pink);
+}
+
+.profile-sticker figcaption {
+  position: absolute;
+  right: -18px;
+  bottom: -12px;
+  border: 3px solid var(--purple);
+  border-radius: 999px;
+  padding: 5px 11px;
+  color: var(--purple);
+  background: var(--yellow);
+  font-family: var(--display);
+  font-size: 0.82rem;
+  box-shadow: 4px 4px 0 var(--purple-dark);
+}
+
 .retro-window {
   width: min(100%, 480px);
   border: 3px solid var(--purple);
@@ -351,6 +411,11 @@ main > section,
   background: var(--yellow);
   box-shadow: 12px 12px 0 var(--purple-dark);
   transform: rotate(2deg);
+}
+
+.profile-stack .retro-window {
+  align-self: end;
+  margin-bottom: 20px;
 }
 
 .retro-window__bar span:last-child {
@@ -885,7 +950,11 @@ main > section,
   }
 
   .hero__visual {
-    min-height: 280px;
+    min-height: 480px;
+  }
+
+  .profile-stack {
+    min-height: 470px;
   }
 
   .featured-grid {
@@ -926,5 +995,13 @@ main > section,
 
   .post-card__media {
     min-height: 150px;
+  }
+
+  .profile-stack {
+    min-height: 420px;
+  }
+
+  .profile-sticker {
+    width: min(68%, 250px);
   }
 }
