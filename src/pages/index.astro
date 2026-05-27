@@ -48,17 +48,17 @@ const heroPosts = featuredPosts.length > 0 ? featuredPosts : latestPosts.slice(0
   <section class="section">
     <div class="section-heading">
       <p class="kicker">Featured</p>
-      <h2>Good rabbit holes</h2>
+      <h2>Posts that give "main character energy"</h2>
     </div>
     <div class="featured-grid">
       {heroPosts.map((post) => <PostCard post={post} featured />)}
     </div>
   </section>
 
-  <section class="section section--split">
-    <div class="section-heading">
+  <section class="section section--split yap-section">
+    <div class="section-heading section-heading--yap">
       <p class="kicker">Latest</p>
-      <h2>Fresh artifacts</h2>
+      <h2>Yap sessions</h2>
       <a href="/blog/">View all posts</a>
     </div>
     <div class="post-list">
