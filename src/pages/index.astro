@@ -16,12 +16,17 @@ const topTags = (await getAllTags())
   <section class="hero">
     <div class="hero__copy">
       <p class="kicker">Loading website...</p>
-      <h1>You want me to use AI? This is what you're going to get.</h1>
-      <p>
-        Tiny tools, durable essays, Codex side quests, and notes from a reformed tech worker
-      </p>
       <div class="loading-widget" aria-hidden="true">
         <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <h1>This could have been made without AI but...</h1>
+      <div class="hero__description-window">
+        <div class="hero__description-bar">
+          <span aria-hidden="true">x</span>
+        </div>
+        <p class="hero__description">
+          Tiny tools, durable essays, Codex side quests, and notes from a reformed tech worker
+        </p>
       </div>
       <div class="hero__actions">
         <a class="button" href="/blog/">Browse posts</a>
@@ -48,6 +53,10 @@ const topTags = (await getAllTags())
     </div>
   </section>
 
+  <div class="y2k-divider" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+
   <section class="section">
     <div class="section-heading">
       <p class="kicker">Featured</p>
@@ -57,6 +66,10 @@ const topTags = (await getAllTags())
       {heroPosts.map((post) => <PostCard post={post} featured />)}
     </div>
   </section>
+
+  <div class="y2k-divider y2k-divider--mini" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
 
   {topTags.length > 0 && (
     <section class="tag-strip" aria-labelledby="tag-strip-heading">
