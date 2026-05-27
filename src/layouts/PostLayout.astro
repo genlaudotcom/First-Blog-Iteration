@@ -2,9 +2,8 @@
 import BaseLayout from './BaseLayout.astro';
 import { formatDate, resolveImagePath, slugify } from '@/lib/posts';
 
-const { post, headings = [] } = Astro.props;
+const { post } = Astro.props;
 const postUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://genlau.com').toString();
-const shareText = encodeURIComponent(`${post.data.title} by Gen Lau`);
 const shareUrl = encodeURIComponent(postUrl);
 const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
 ---
@@ -16,7 +15,7 @@ const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
   type="article"
 >
   <article class="post-shell">
-    <header class="post-hero">
+    <header class:list={['post-hero', { 'post-hero--solo': heroImage === '/social-card.svg' }]}>
       <div class="post-window">
         <div class="post-window__bar">
           <span>post_viewer.exe</span>
@@ -28,14 +27,12 @@ const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
             <span>{post.data.category}</span>
           </div>
           <h1>{post.data.title}</h1>
-          <p>{post.data.description}</p>
+          <p><strong>{post.data.description}</strong></p>
           <div class="tag-row">
             {post.data.tags.map((tag) => <a href={`/tags/${slugify(tag)}/`}>#{tag}</a>)}
           </div>
           <div class="share-row" aria-label="Share this post">
-            <a href={`https://bsky.app/intent/compose?text=${shareText}%20${shareUrl}`}>Share</a>
-            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}>LinkedIn</a>
-            <a href={`mailto:?subject=${shareText}&body=${shareUrl}`}>Email</a>
+            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}>Share on LinkedIn</a>
           </div>
         </div>
       </div>
@@ -46,26 +43,6 @@ const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
       )}
     </header>
     <div class="post-grid">
-      <aside class="toc" aria-label="Table of contents">
-        <strong>Contents</strong>
-        {headings.length > 0 ? (
-          <nav>
-            {headings.filter((heading) => heading.depth === 2).map((heading) => (
-              <a href={`#${heading.slug}`}>{heading.text}</a>
-            ))}
-          </nav>
-        ) : (
-          <span>Short read</span>
-        )}
-        <div class="side-widget" aria-label="Current mood">
-          <span>mood</span>
-          <strong>curious online</strong>
-        </div>
-        <div class="side-widget" aria-label="Now playing">
-          <span>now playing</span>
-          <strong>sparkle loop.mp3</strong>
-        </div>
-      </aside>
       <div class="prose">
         <slot />
       </div>

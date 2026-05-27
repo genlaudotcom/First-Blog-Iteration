@@ -1130,7 +1130,16 @@ main > section,
 }
 
 .post-hero {
-  padding: 54px 0 42px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.72fr);
+  gap: 28px;
+  align-items: stretch;
+  padding: 34px 0 26px;
+}
+
+.post-hero--solo {
+  grid-template-columns: minmax(0, 820px);
+  justify-content: center;
 }
 
 .post-window {
@@ -1140,22 +1149,6 @@ main > section,
   border-radius: 14px 14px 10px 10px;
   background: #fff;
   box-shadow: var(--pixel-shadow);
-}
-
-.post-window::after {
-  content: "open web diary";
-  position: absolute;
-  right: 18px;
-  top: 52px;
-  border: 2px solid var(--purple);
-  border-radius: 999px;
-  padding: 4px 9px;
-  color: var(--purple);
-  background: var(--yellow);
-  font-family: var(--display);
-  font-size: 0.68rem;
-  box-shadow: 3px 3px 0 var(--pink);
-  transform: rotate(3deg);
 }
 
 .post-window__bar span:last-child {
@@ -1176,27 +1169,32 @@ main > section,
     #fff;
 }
 
+.post-hero h1 {
+  font-size: clamp(2.25rem, 5.1vw, 4.25rem);
+  overflow-wrap: anywhere;
+}
+
 .post-hero__image {
   overflow: hidden;
   border: 3px solid var(--purple);
-  border-radius: 12px;
-  margin: 34px 0 0;
+  border-radius: 14px;
+  margin: 0;
   background: var(--panel-hot);
-  box-shadow: var(--pixel-shadow);
+  box-shadow: 8px 8px 0 var(--pink);
+  transform: rotate(1.5deg);
 }
 
 .post-hero__image img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
+  min-height: 280px;
   object-fit: cover;
 }
 
 .post-grid {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 760px);
-  gap: 42px;
-  align-items: start;
+  max-width: 820px;
+  margin-inline: auto;
 }
 
 .toc {
@@ -1420,6 +1418,7 @@ main > section,
   }
 
   .hero,
+  .post-hero,
   .section--split,
   .tag-strip,
   .post-grid,
@@ -1429,6 +1428,24 @@ main > section,
 
   .hero {
     padding-top: 34px;
+  }
+
+  .post-hero {
+    gap: 20px;
+    padding-top: 28px;
+  }
+
+  .post-window__body {
+    padding: 20px;
+  }
+
+  .post-hero__image {
+    transform: none;
+  }
+
+  .post-hero__image img {
+    min-height: 180px;
+    max-height: 220px;
   }
 
   .hero__visual {
@@ -1483,6 +1500,10 @@ main > section,
     text-shadow: 3px 3px 0 var(--yellow);
   }
 
+  .post-hero h1 {
+    font-size: 2.05rem;
+  }
+
   .site-header nav a,
   .tag-row a,
   .filters a,
@@ -1503,7 +1524,6 @@ main > section,
   }
 
   .page-header::after,
-  .post-window::after,
   .contact-card::after {
     position: static;
     display: inline-flex;
