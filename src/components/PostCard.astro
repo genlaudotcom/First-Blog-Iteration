@@ -7,6 +7,10 @@ const image = resolveImagePath(post.data.heroImage ?? post.data.image);
 ---
 
 <article class:list={['post-card', { featured }]}>
+  <div class="post-card__titlebar">
+    <span>{featured ? 'FEATURED.LOG' : 'BLOG_POST.HTML'}</span>
+    <span aria-hidden="true">NEW!</span>
+  </div>
   <a
     class="post-card__media"
     href={`/blog/${slug}/`}
@@ -14,7 +18,7 @@ const image = resolveImagePath(post.data.heroImage ?? post.data.image);
     style={`--post-image: url('${image}')`}
   >
     <span>{post.data.category}</span>
-    <small>Read</small>
+    <small>Open</small>
   </a>
   <div class="post-card__body">
     <div class="eyebrow">

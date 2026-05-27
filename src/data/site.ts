@@ -8,6 +8,6 @@ export const SITE = {
     { href: '/', label: 'Home' },
     { href: '/blog/', label: 'Blog' },
     { href: '/tags/', label: 'Tags' },
-    { href: '/rss.xml', label: 'RSS' }
+    { href: '/contact/', label: 'Contact' }
   ]
 };

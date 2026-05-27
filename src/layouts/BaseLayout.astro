@@ -1,5 +1,6 @@
 ---
 import { SITE } from '@/data/site';
+import genlauLogo from '@/content/assets/genlaulogoprint.png';
 import '../styles/global.css';
 
 const {
@@ -21,7 +22,7 @@ const imageUrl = new URL(image, SITE.url);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f8f7f2" />
+    <meta name="theme-color" content="#f6c9f3" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
@@ -39,13 +40,22 @@ const imageUrl = new URL(image, SITE.url);
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" aria-label={`${SITE.title} home`}>
-        <span class="brand-mark">G</span>
-        <span>{SITE.title}</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        {SITE.nav.map((item) => <a href={item.href}>{item.label}</a>)}
-      </nav>
+      <div class="site-header__bar">
+        <a class="brand" href={SITE.url} aria-label="Go to genlau.com">
+          <img src={genlauLogo.src} alt="Gen Lau" width="960" height="540" />
+        </a>
+        <span class="window-controls" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div class="site-header__body">
+        <p class="status-line">STATUS: <span>online</span></p>
+        <nav aria-label="Primary navigation">
+          {SITE.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+      </div>
     </header>
     <main>
       <slot />

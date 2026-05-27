@@ -9,12 +9,13 @@ const categories = [...new Set(posts.map((post) => post.data.category))].sort();
 
 <BaseLayout title="Blog" description="Creative experiments, essays, and weird Codex projects from genlau.com.">
   <section class="page-header">
-    <p class="kicker">Archive</p>
+    <p class="kicker">Archive.exe</p>
     <h1>Blog</h1>
     <p>Creative experiments, essays, implementation notes, and odd little artifacts worth leaving on the open web.</p>
   </section>
 
   <section class="filters" aria-label="Categories">
+    <span class="filter-label">Folders:</span>
     {categories.map((category) => <a href={`/categories/${slugify(category)}/`}>{category}</a>)}
   </section>
 

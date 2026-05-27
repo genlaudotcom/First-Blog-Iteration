@@ -5,27 +5,37 @@ import { getFeaturedPosts, getPublishedPosts } from '@/lib/posts';
 
 const featuredPosts = await getFeaturedPosts();
 const latestPosts = (await getPublishedPosts()).slice(0, 4);
+const heroPosts = featuredPosts.length > 0 ? featuredPosts : latestPosts.slice(0, 3);
 ---
 
 <BaseLayout>
   <section class="hero">
     <div class="hero__copy">
-      <p class="kicker">Essays, experiments, strange little builds</p>
-      <h1>A fast personal blog for weird internet work.</h1>
+      <p class="kicker">Loading personal website...</p>
+      <h1>Weird internet work, now with extra pixels.</h1>
       <p>
         Creative systems, Codex side quests, tiny tools, durable essays, and notes from the messy middle of making things online.
       </p>
+      <div class="loading-widget" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
       <div class="hero__actions">
         <a class="button" href="/blog/">Browse posts</a>
         <a class="button button--ghost" href="/rss.xml">Subscribe</a>
       </div>
     </div>
-    <div class="hero__visual" aria-hidden="true">
-      <div class="signal-panel">
-        <span>Currently filing under</span>
-        <strong>Codex projects</strong>
-        <strong>internet tools</strong>
-        <strong>creative systems</strong>
+    <div class="hero__visual">
+      <div class="retro-window" aria-hidden="true">
+        <div class="retro-window__bar">
+          <span>status_window.gif</span>
+          <span>OK</span>
+        </div>
+        <div class="signal-panel">
+          <span>Currently filing under</span>
+          <strong>Codex projects</strong>
+          <strong>internet tools</strong>
+          <strong>creative systems</strong>
+        </div>
       </div>
     </div>
   </section>
@@ -36,7 +46,7 @@ const latestPosts = (await getPublishedPosts()).slice(0, 4);
       <h2>Good rabbit holes</h2>
     </div>
     <div class="featured-grid">
-      {featuredPosts.map((post) => <PostCard post={post} featured />)}
+      {heroPosts.map((post) => <PostCard post={post} featured />)}
     </div>
   </section>
 

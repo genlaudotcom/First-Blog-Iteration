@@ -17,19 +17,27 @@ const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
 >
   <article class="post-shell">
     <header class="post-hero">
-      <div class="eyebrow">
-        <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
-        <span>{post.data.category}</span>
-      </div>
-      <h1>{post.data.title}</h1>
-      <p>{post.data.description}</p>
-      <div class="tag-row">
-        {post.data.tags.map((tag) => <a href={`/tags/${slugify(tag)}/`}>#{tag}</a>)}
-      </div>
-      <div class="share-row" aria-label="Share this post">
-        <a href={`https://bsky.app/intent/compose?text=${shareText}%20${shareUrl}`}>Share</a>
-        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}>LinkedIn</a>
-        <a href={`mailto:?subject=${shareText}&body=${shareUrl}`}>Email</a>
+      <div class="post-window">
+        <div class="post-window__bar">
+          <span>post_viewer.exe</span>
+          <span aria-hidden="true">?</span>
+        </div>
+        <div class="post-window__body">
+          <div class="eyebrow">
+            <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+            <span>{post.data.category}</span>
+          </div>
+          <h1>{post.data.title}</h1>
+          <p>{post.data.description}</p>
+          <div class="tag-row">
+            {post.data.tags.map((tag) => <a href={`/tags/${slugify(tag)}/`}>#{tag}</a>)}
+          </div>
+          <div class="share-row" aria-label="Share this post">
+            <a href={`https://bsky.app/intent/compose?text=${shareText}%20${shareUrl}`}>Share</a>
+            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}>LinkedIn</a>
+            <a href={`mailto:?subject=${shareText}&body=${shareUrl}`}>Email</a>
+          </div>
+        </div>
       </div>
       {heroImage !== '/social-card.svg' && (
         <figure class="post-hero__image">
