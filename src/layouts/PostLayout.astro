@@ -57,6 +57,14 @@ const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
         ) : (
           <span>Short read</span>
         )}
+        <div class="side-widget" aria-label="Current mood">
+          <span>mood</span>
+          <strong>curious online</strong>
+        </div>
+        <div class="side-widget" aria-label="Now playing">
+          <span>now playing</span>
+          <strong>sparkle loop.mp3</strong>
+        </div>
       </aside>
       <div class="prose">
         <slot />

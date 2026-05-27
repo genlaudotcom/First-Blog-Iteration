@@ -27,6 +27,10 @@ const image = resolveImagePath(post.data.heroImage ?? post.data.image);
     </div>
     <h2><a href={`/blog/${slug}/`}>{post.data.title}</a></h2>
     <p>{post.data.description}</p>
+    <div class="post-card__meta-strip" aria-label="Post details">
+      <span>diary mode</span>
+      <span>quick read</span>
+    </div>
     <div class="tag-row" aria-label="Tags">
       {post.data.tags.map((tag) => <a href={`/tags/${slugify(tag)}/`}>#{tag}</a>)}
     </div>
