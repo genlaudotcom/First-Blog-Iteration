@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getAllTags, slugify } from '@/lib/posts';
+
+const tags = await getAllTags();
+---
+
+<BaseLayout title="Tags" description="Browse posts by topic.">
+  <section class="page-header">
+    <p class="kicker">Topics</p>
+    <h1>Tags</h1>
+    <p>Follow a thread across experiments, essays, and builds.</p>
+  </section>
+  <section class="tag-cloud">
+    {tags.map((tag) => (
+      <a href={`/tags/${slugify(tag.name)}/`}>
+        <span>#{tag.name}</span>
+        <small>{tag.count}</small>
+      </a>
+    ))}
+  </section>
+</BaseLayout>

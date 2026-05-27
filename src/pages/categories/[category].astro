@@ -1,0 +1,29 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import { getAllCategories, getPublishedPosts, slugify } from '@/lib/posts';
+
+export async function getStaticPaths() {
+  const categories = await getAllCategories();
+  return categories.map((category) => ({
+    params: { category: slugify(category.name) },
+    props: { category: category.name }
+  }));
+}
+
+const { category } = Astro.props;
+const posts = (await getPublishedPosts()).filter(
+  (post) => slugify(post.data.category) === slugify(category)
+);
+---
+
+<BaseLayout title={category} description={`Posts in ${category}.`}>
+  <section class="page-header">
+    <p class="kicker">Category</p>
+    <h1>{category}</h1>
+    <p>{posts.length} {posts.length === 1 ? 'post' : 'posts'} filed here.</p>
+  </section>
+  <section class="post-list post-list--wide">
+    {posts.map((post) => <PostCard post={post} />)}
+  </section>
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import { getAllTags, getPublishedPosts, slugify } from '@/lib/posts';
+
+export async function getStaticPaths() {
+  const tags = await getAllTags();
+  return tags.map((tag) => ({
+    params: { tag: slugify(tag.name) },
+    props: { tag: tag.name }
+  }));
+}
+
+const { tag } = Astro.props;
+const posts = (await getPublishedPosts()).filter((post) =>
+  post.data.tags.some((postTag) => slugify(postTag) === slugify(tag))
+);
+---
+
+<BaseLayout title={`#${tag}`} description={`Posts tagged ${tag}.`}>
+  <section class="page-header">
+    <p class="kicker">Tag</p>
+    <h1>#{tag}</h1>
+    <p>{posts.length} {posts.length === 1 ? 'post' : 'posts'} in this topic.</p>
+  </section>
+  <section class="post-list post-list--wide">
+    {posts.map((post) => <PostCard post={post} />)}
+  </section>
+</BaseLayout>

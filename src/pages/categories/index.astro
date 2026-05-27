@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getAllCategories, slugify } from '@/lib/posts';
+
+const categories = await getAllCategories();
+---
+
+<BaseLayout title="Categories" description="Browse posts by category.">
+  <section class="page-header">
+    <p class="kicker">Sections</p>
+    <h1>Categories</h1>
+    <p>Browse the archive by the broad lanes the work keeps falling into.</p>
+  </section>
+  <section class="tag-cloud">
+    {categories.map((category) => (
+      <a href={`/categories/${slugify(category.name)}/`}>
+        <span>{category.name}</span>
+        <small>{category.count}</small>
+      </a>
+    ))}
+  </section>
+</BaseLayout>
