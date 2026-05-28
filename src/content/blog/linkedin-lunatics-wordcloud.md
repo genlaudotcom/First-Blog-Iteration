@@ -1,7 +1,7 @@
 ---
 title: "I had ChatGPT Scrape r/LinkedInLunatics to Find the Most Used LinkedIn Slop Words"
 description: "A visualization of the most overused LinkedIn buzzwords"
-pubDate: 2026-05-27
+pubDate: 2026-05-27T16:03:00-07:00
 heroImage: "y2kwordcloud.png"
 tags: ["linkedin", "data", "weird internet"]
 ---

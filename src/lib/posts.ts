@@ -27,13 +27,18 @@ export function formatDate(date: Date) {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
-    timeZone: 'UTC'
+    timeZone: 'America/Los_Angeles'
   }).format(date);
 }
 
 export async function getPublishedPosts() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return posts.sort((a, b) => {
+    const dateOrder = b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    if (dateOrder !== 0) return dateOrder;
+
+    return b.id.localeCompare(a.id);
+  });
 }
 
 export async function getFeaturedPosts() {

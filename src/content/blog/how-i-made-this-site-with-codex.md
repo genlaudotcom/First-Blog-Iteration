@@ -1,7 +1,7 @@
 ---
 title: "How I Made This Site with Codex"
 description: "I had the domain. I had the ChatGPT pro subscription. I had the time."
-pubDate: 2026-05-27
+pubDate: 2026-05-27T17:20:00-07:00
 tags: ["codex", "apps", "side projects"]
 heroImage: "how i built my site with codex image.png"
 ---
