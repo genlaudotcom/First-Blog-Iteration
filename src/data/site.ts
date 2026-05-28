@@ -7,6 +7,7 @@ export const SITE = {
   nav: [
     { href: '/', label: 'Home' },
     { href: '/blog/', label: 'Blog' },
+    { href: '/about/', label: 'About me' },
     { href: '/contact/', label: 'Contact' }
   ]
 };

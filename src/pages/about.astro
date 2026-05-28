@@ -1,0 +1,51 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import aboutProfile from '@/content/assets/aboutmeprofilepicture.png';
+---
+
+<BaseLayout title="About me" description="About Gen Lau, her internet experiments, and her weird AI side quests.">
+  <section class="page-header">
+    <p class="kicker">About_me.exe</p>
+    <h1>About me</h1>
+    <p><strong>I help companies make sense of customer data, marketing technology, and personalization. Except right now. I'm looking for a job.</strong></p>
+  </section>
+
+  <section class="contact-panel about-panel">
+    <div class="retro-window about-window">
+      <div class="retro-window__bar">
+        <span>profile_pic.png</span>
+        <span>OK</span>
+      </div>
+      <figure class="about-photo">
+        <img src={aboutProfile.src} alt="Portrait of Gen Lau" width="1254" height="1254" />
+        <figcaption>currently online</figcaption>
+      </figure>
+    </div>
+
+    <div class="contact-card about-card">
+      <p class="kicker">Status update</p>
+      <h2>Hi, I'm Gen</h2>
+      <p>
+        I spent years building the plumbing behind modern marketing: customer data platforms,
+        lifecycle systems, personalization engines, experimentation frameworks, and all the
+        unglamorous infrastructure that makes "the right message at the right time" actually happen.
+      </p>
+      <p>
+        Along the way, I worked on customer experience and marketing technology initiatives at
+        companies like Abercrombie & Fitch Co. and Oportun, translating messy business problems into
+        systems that could actually scale.
+      </p>
+      <h2>Currently</h2>
+      <ul>
+        <li>Building weird things with AI</li>
+        <li>Writing about marketing, technology, and productivity theater</li>
+        <li>Learning more about investing, financial markets and systems</li>
+        <li>Exploring how incentives shape company decisions</li>
+        <li>Figuring out what the next chapter of my career looks like</li>
+      </ul>
+      <div class="about-card__actions">
+        <a class="button about-card__button" href="/contact/">Contact me</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
