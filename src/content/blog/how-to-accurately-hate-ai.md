@@ -2,13 +2,13 @@
 title: "How to Accurately Hate AI"
 description: "If you're going to hate AI, you need to understand it."
 pubDate: 2026-05-28T00:00:00-07:00
-heroImage: "/src/content/assets/howtoaccuratelyhateai.png"
+heroImage: "howtoaccuratelyhateai.png"
 tags: ["ai"]
 featured: true
 ---
 ## I want you to channel your hatred of AI more specifically
 I'm loving the ire behind taking down tech billionairs. Trust me. But where we are losing effectiveness is by the broad strokes we claim across the entire thing. That's why I think we need to drill down a bit so you are more able to talk shit as needed.
-<img src="/src/content/assets/howtoaccuratelyhateai.png" alt="ai hierarchy">
+<img src="/images/howtoaccuratelyhateai.png" alt="ai hierarchy">
 
 ## The general overview of AI (as told as simply as possible)
 
