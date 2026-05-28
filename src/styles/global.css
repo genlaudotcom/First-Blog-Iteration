@@ -273,11 +273,11 @@ main > section,
 @keyframes soft-float {
   0%,
   100% {
-    translate: 0 0;
+    transform: translateX(-52%) rotate(-5deg);
   }
 
   50% {
-    translate: 0 -4px;
+    transform: translateX(-52%) translateY(-12px) rotate(-2deg);
   }
 }
 
