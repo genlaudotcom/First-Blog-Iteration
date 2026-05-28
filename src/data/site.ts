@@ -1,6 +1,7 @@
 export const SITE = {
   title: 'genlau.com',
-  description: 'Creative experiments, essays, and weird Codex projects from Gen Lau.',
+  description:
+    "Genevieve builds weird things with AI and tries to figure out why every company wants it but nobody can agree on what it's for.",
   url: 'https://genlau.com',
   author: 'Gen Lau',
   locale: 'en_US',
