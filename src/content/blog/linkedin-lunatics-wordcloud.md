@@ -4,6 +4,7 @@ description: "A visualization of the most overused LinkedIn buzzwords"
 pubDate: 2026-05-27T16:03:00-07:00
 heroImage: "y2kwordcloud.png"
 tags: ["linkedin", "data", "weird internet"]
+featured: false
 ---
 
 Fine. You want me to use AI. I'll at least use it to make me laugh, roll my eyes, or find ways to cut through the garbage. That being said, I had ChatGPT scrape the LinkedIn posts that were shared/flamed/roasted in this subreddit in the last year to see what words were used the most.

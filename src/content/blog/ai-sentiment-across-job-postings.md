@@ -2,6 +2,7 @@
 title: "I Had ChatGPT Scrape Job Postings Relevant to Me and Even Companies Don’t Know What They Want With AI"
 description: "Not a lot of people actually knows what it takes to use AI meaningfully..."
 pubDate: 2026-05-27T18:33:00-07:00
+featured: true
 heroImage: "ai usage sentiment.png"
 tags: ["experiments", "jobs", "ai"]
 ---
