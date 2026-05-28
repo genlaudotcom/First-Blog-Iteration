@@ -1405,6 +1405,46 @@ main > section,
   overflow-wrap: anywhere;
 }
 
+.post-hero .post-ai-disclaimer {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  margin: 4px 0 18px;
+  border: 2px solid var(--purple);
+  border-radius: 999px;
+  padding: 7px 12px;
+  color: var(--purple);
+  background:
+    linear-gradient(110deg, transparent 0 34%, rgba(255, 255, 255, 0.86) 45%, transparent 58%),
+    linear-gradient(180deg, #fff9a8 0%, #ffe6fb 100%);
+  background-size: 220% 100%, auto;
+  font-family: var(--display);
+  font-size: 0.76rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  box-shadow:
+    4px 4px 0 rgba(255, 29, 104, 0.44),
+    0 0 18px rgba(69, 226, 255, 0.3);
+}
+
+.post-hero .post-ai-disclaimer::before,
+.post-hero .post-ai-disclaimer::after {
+  flex: 0 0 auto;
+  color: var(--pink);
+  font-family: var(--display);
+  text-shadow: 1px 1px 0 var(--yellow);
+}
+
+.post-hero .post-ai-disclaimer::before {
+  content: "✦";
+}
+
+.post-hero .post-ai-disclaimer::after {
+  content: "♡";
+}
+
 .post-hero__image {
   overflow: hidden;
   border: 3px solid var(--purple);

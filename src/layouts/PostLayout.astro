@@ -27,6 +27,7 @@ const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
           </div>
           <h1>{post.data.title}</h1>
           <p><strong>{post.data.description}</strong></p>
+          <p class="post-ai-disclaimer">ironically contains AI generated images</p>
           <div class="tag-row">
             {post.data.tags.map((tag) => <a href={`/tags/${slugify(tag)}/`}>#{tag}</a>)}
           </div>
