@@ -979,25 +979,6 @@ main > section,
   transform: translateX(35%);
 }
 
-.post-card__media span,
-.post-card__media small {
-  border: 2px solid var(--purple);
-  background: var(--yellow);
-  color: var(--purple);
-  box-shadow: 3px 3px 0 var(--pink);
-}
-
-.post-card__media span {
-  padding: 6px 10px;
-}
-
-.post-card__media small {
-  border-radius: 999px;
-  padding: 4px 9px;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-}
-
 .post-card__body {
   position: relative;
   padding: 22px;

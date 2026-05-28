@@ -16,10 +16,7 @@ const image = resolveImagePath(post.data.heroImage ?? post.data.image);
     href={`/blog/${slug}/`}
     aria-label={`Read ${post.data.title}`}
     style={`--post-image: url('${image}')`}
-  >
-    <span>{post.data.category}</span>
-    <small>Open</small>
-  </a>
+  ></a>
   <div class="post-card__body">
     <div class="eyebrow">
       <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
