@@ -31,6 +31,16 @@ export function formatDate(date: Date) {
   }).format(date);
 }
 
+export function estimateReadingTime(content: string) {
+  const words = content
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)?/g)?.length ?? 0;
+  const minutes = Math.max(1, Math.ceil(words / 225));
+
+  return `${minutes} min read`;
+}
+
 export async function getPublishedPosts() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.sort((a, b) => {

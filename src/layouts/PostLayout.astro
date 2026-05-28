@@ -24,7 +24,6 @@ const heroImage = resolveImagePath(post.data.heroImage ?? post.data.image);
         <div class="post-window__body">
           <div class="eyebrow">
             <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
-            <span>{post.data.category}</span>
           </div>
           <h1>{post.data.title}</h1>
           <p><strong>{post.data.description}</strong></p>

@@ -8,12 +8,20 @@ heroImage: "how i built my site with codex image.png"
 ## I'm looking for a job and had the time. If I can't "use AI" at work because I don't have a job, what do I have at my disposal to keep my brain sharp and show employers that I still got it?
 
 ## The Context
-Initially, my goal was to have something minimal and aesthetic. Then I realized, in a world where everyone is interacting with slick GPTs, we need a little color in our lives. I know gen z/gen alpha is obsessed with y2k, but I actually lived it so I wanted to make sure my site had personality and reflected a "well I didn't wish this was made with AI but I did it anyway to show employers that I know what I'm doing" attitude.
+Initially, my goal was to have something minimal and aesthetic. Then I realized, in a world where everyone is interacting with slick GPTs, we need a little color in our lives. I wanted to intentionally avoid the hyper-slick AI startup aesthetic because the internet already feels flattened by generated content. I wanted something that felt opinionated and human even if I used AI to build it. That being said, I know gen z/gen alpha is obsessed with y2k, but I actually lived it so I wanted to make sure my site had personality and reflected a "well I didn't wish this was made with AI but I did it anyway to show employers that I know what I'm doing" attitude.
 
 I already had the domain genlau.com, (also side note, a woman named Jennifer owns genevievelau.com and that's rude) and it was just sitting there making me pay $20 a year for nothing. Then I had a the idea to put it to use but I also didn't want to pay $120 a year for a website subscription either.
 
+The interesting part wasn't asking Codex to "make me a website." It was learning how specific I needed to be when mentioning my existing assets and the vision I was going for.
+
 ## What Codex Helped With
-Codex helped me put together all the steps I needed to create a website and connect it to my existing domain. My work experience really helped here though. As a martech manager at Oportun, having a technical foundation and understanding high-level fundamentals of networking came in clutch. The acronyms "DNS" and CNAME didn't scare me away from this project because knowing the primary functions of GitHub and Cloudflare made sense to me and Terminal doesn't seem like a developer's black box. After a bit of authentication troubleshooting and nameserver updates, the current version of genlau.com was born.
+Codex helped me put together all the steps I needed to create a website and connect it to my existing domain. My work experience really helped here though. As a martech manager at Oportun, having a technical foundation and understanding high-level fundamentals of networking came in clutch. The acronyms "DNS" and CNAME didn't scare me away from this project because knowing the primary functions of GitHub and Cloudflare made sense to me and Terminal doesn't seem like a developer's black box. 
+
+I had to connect GitHub, Cloudflare Pages, DNS records and my existing domain registrar together in a way that agreed with each other. What this meant was learning a new flow about how requests actually travel. Domain registrar points traffic toward nameservers. Cloudflare manages DNS records. GitHub acts as the source repository. Cloudflare Pages watches the repo and automatically builds the site when I push changes.
+
+At one point, I accidentally broke deployment permissions and spent 45 minutes tracking whether the issue lived in GitHub, Cloudflare Pages or in any of my auth tokens. Luckily, I have practice finding anomalies in data flows.
+
+After a bit of authentication troubleshooting and nameserver updates, the current version of genlau.com was born.
 
 ## What I Still Have to Decide
 What's going to live on here? I have a lot of feelings being in the job market in this current stage, and let's be honest. AI is making this MESSY. But I know I can channel my feelings and thoughts into this project while using it as my portfolio.

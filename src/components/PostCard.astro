@@ -1,15 +1,19 @@
 ---
-import { formatDate, resolveImagePath, slugFromId, slugify } from '@/lib/posts';
+import { estimateReadingTime, formatDate, resolveImagePath, slugFromId, slugify } from '@/lib/posts';
 
 const { post, featured = false } = Astro.props;
 const slug = slugFromId(post.id);
 const image = resolveImagePath(post.data.heroImage ?? post.data.image);
+const readingTime = estimateReadingTime(post.body ?? post.data.description);
+const daysSincePublished =
+  (Date.now() - post.data.pubDate.valueOf()) / (1000 * 60 * 60 * 24);
+const isNew = daysSincePublished >= 0 && daysSincePublished <= 7;
 ---
 
 <article class:list={['post-card', { featured }]}>
   <div class="post-card__titlebar">
     <span>{featured ? 'FEATURED.LOG' : 'BLOG_POST.HTML'}</span>
-    <span aria-hidden="true">NEW!</span>
+    {isNew && <span aria-hidden="true">NEW!</span>}
   </div>
   <a
     class="post-card__media"
@@ -20,13 +24,11 @@ const image = resolveImagePath(post.data.heroImage ?? post.data.image);
   <div class="post-card__body">
     <div class="eyebrow">
       <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
-      <span>{post.data.category}</span>
     </div>
     <h2><a href={`/blog/${slug}/`}>{post.data.title}</a></h2>
     <p>{post.data.description}</p>
     <div class="post-card__meta-strip" aria-label="Post details">
-      <span>diary mode</span>
-      <span>quick read</span>
+      <span>{readingTime}</span>
     </div>
     <div class="tag-row" aria-label="Tags">
       {post.data.tags.map((tag) => <a href={`/tags/${slugify(tag)}/`}>#{tag}</a>)}
