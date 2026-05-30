@@ -6,7 +6,7 @@ featured: true
 tags: ["codex", "apps", "side projects"]
 heroImage: "how i built my site with codex image.png"
 ---
-## I'm looking for a job and had the time. If I can't "use AI" at work because I don't have a job, what do I have at my disposal to keep my brain sharp and show employers that I still got it?
+## "The tools matter. But the human behind it matters more."
 
 ## The Context
 I already had the domain genlau.com, (also side note, a woman named Jennifer owns genevievelau.com and that's rude) and it was just sitting there making me pay $20 a year for nothing. Then I had a the idea to put it to use but I also didn't want to pay $120 a year for a website subscription either.
@@ -36,3 +36,10 @@ After a bit of authentication troubleshooting and nameserver updates, the curren
 
 ## What I Still Have to Decide
 What's going to live on here? I have a lot of feelings being in the job market in this current stage, and let's be honest. AI is making this MESSY. But I know I can channel my feelings and thoughts into this project while using it as my portfolio.
+
+## The Takeaway
+Yes, I used AI to build this website. But AI didn't give me the domain, the technical foundation, the marketing background, or the creative direction. Could someone with no prior experience eventually build something similar with AI? Probably. What AI did for me was compress the time between idea and execution. The judgement, creative diretion, troubleshooting and point of view were all still very much human. 
+
+That's what so many companies are missing in this conversation. The value isn't in pushing buttons to generate a website. The value and impact are knowing what to build, why, and how to shape something that actually has a voice.
+
+<b>The tools matter. But the human behind it matters more.</b>
