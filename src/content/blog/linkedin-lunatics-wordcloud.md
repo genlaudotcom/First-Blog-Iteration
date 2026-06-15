@@ -6,7 +6,7 @@ heroImage: "y2kwordcloud.png"
 tags: ["linkedin", "data", "weird internet"]
 featured: false
 ---
-<img src="/images/y2kwordcloud.png" alt="word cloud of most used linkedin buzzwords"><br>
+<img src="/images/linkedin_lunatics_wordcloud.png" alt="word cloud of most used linkedin buzzwords"><br>
 Fine. You want me to use AI. I'll at least use it to make me laugh, roll my eyes, or find ways to cut through the garbage. That being said, I had ChatGPT scrape the LinkedIn posts that were shared/flamed/roasted in the <a href="https://www.reddit.com/r/LinkedInLunatics/">r/LinkedInLunatics</a> subreddit in the last year to see what words were used the most.
 
 Hilariously, the top words were:
